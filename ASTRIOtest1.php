@@ -36,7 +36,6 @@ function seachCategory($arr,$id){
         seachCategory($value,$id);
     }
    }
-   return $result;
 }
 seachCategory($categories,2);
 ?>

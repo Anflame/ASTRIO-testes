@@ -78,7 +78,7 @@ class DbBox extends AbstractBox {
         parent::save();
         $key = $this->key;
         $value = $this->value;
-        $mybase = mysqli_connect('localhost','fortunee_base','Freeman100493','fortunee_mybase') or die("Ошибка подключения к БД");
+        $mybase = mysqli_connect('localhost',' ',' ',' ') or die("Ошибка подключения к БД");
         $query = "SELECT * FROM `base` WHERE `id` = '$key'";
         $result = mysqli_query($mybase,$query);
         if($row = mysqli_fetch_array($result)){

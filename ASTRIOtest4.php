@@ -106,4 +106,3 @@ $obj->setData(1,'Новая запись в файл');
 $obj->save();
 echo $obj->load();
 ?>
->>>>>>> 54b770b48a106d1c62fe000ed22126ba9480aef7

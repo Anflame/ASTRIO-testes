@@ -26,16 +26,16 @@ $categories = array(
    	)
 	),
 );
-function seachCategory($arr,$id){
-   foreach ($arr as $item => $value) {
-    if ($item == 'children') {
-        if($value['id'] == $id){
-            $result = $value['title'];
-            echo $result;
-        }
-        seachCategory($value,$id);
-    }
-   }
+function searchCategory($array,$id, &$result = 0){
+	if($array['id'] == $id){
+	 $result = $array['title'];
+	}
+	foreach ($array as $key => $value) {
+		if(is_array($value) || $key == 'children'){
+			searchCategory($value,$id,$result);
+		}
+	}
+	return $result;
 }
-seachCategory($categories,2);
+searchCategory($categories,4);
 ?>

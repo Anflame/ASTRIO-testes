@@ -69,8 +69,9 @@ class FileBox extends AbstractBox {
     public function load(){
         parent::load();
         $data = $this->data;
-        $takeFile = file($data);
-        return $takeFile;
+        $fileGet = file_get_contents($data);
+        $unserFileGet = unserialize($fileGet);
+        return $unserFileGet;
     }
 }
 class DbBox extends AbstractBox {
@@ -145,8 +146,7 @@ class DbBox extends AbstractBox {
     }
 }
 // $obj = FileBox::getInstance();
-// $obj->setData(1,'Новая запись в файл');
-// $obj->save();
-$obj1 = DbBox::getInstance();
-print_r($obj1->load());
+// $obj->load();
+// $obj1 = DbBox::getInstance();
+// print_r($obj1->load());
 ?>

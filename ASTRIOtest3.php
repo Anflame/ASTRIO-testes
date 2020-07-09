@@ -15,7 +15,12 @@ function tagNewArray($array,$firstPosition,$tag, &$lastPosition){
                 }
                 else $result = false;
             }
-            else $result = true;
+            else {
+                if(($lastPosition-$firstPosition)%2 == 0){
+                    $result = false;
+                }
+                else $result = true;
+            }
         }
         else $result = true;
     }
@@ -61,6 +66,6 @@ function correctHTML($array) {
     else $result = "Корректный HTML";
     return $result;
 }
-$array = ["<div>","<div>","<a>","</div>","<span>","<b>","</b>","<b>","</b>","</b>","<b>","</span>","</a>","</div>"];
+$array = ["<div>","<a>","<b>","<var>","<div>","</div>","</var>","</b>","</a>","</div>"];
 correctHTML($array);
 ?>
